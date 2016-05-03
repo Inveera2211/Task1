@@ -1,0 +1,65 @@
+<style>
+
+h4 {
+  color: red;
+  text-align: center;
+} 
+h1 {
+  color: black;
+  text-align: left;
+}   
+</style>
+
+
+<h1>Existing articles</h1>
+
+
+
+<%= paginate @articles %>
+<div class="container">
+   <div class="col-xs-4"></div>
+  <div clas="col-xs-4">
+<table class="table  table-bordered">
+  <caption> <h4><center>Listed articles</center></h4></caption>
+  <thead>
+    <tr>
+      <th><center>Title</center></th>
+      <th>Text</th>
+      <th><center>Do Action</center></th>
+      <th colspan="2"></th>
+    </tr>
+    
+    
+    <% @articles.each do |article| %>
+    <tr>
+
+      <p>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article), class:"btn btn-primary" %></td>
+       <td><% if can? :update, article %>
+   <%= link_to 'Edit', edit_article_path(article), class:"btn btn-primary" %></td>  
+      <%end%>
+      <td><% if can? :delete, article%>
+      <%= link_to 'Destroy', article_path(article),
+      method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
+      <%end%>
+
+   </p>
+    </tr>
+
+  <% end %>
+  </tbody>
+
+</table>
+<center><%= link_to 'Back', new_user_session_path, class:"btn btn-default" %></center>
+</div>
+</div>
+ <div clas="col-xs-4">
+</div>
+
+
+
+
+
+

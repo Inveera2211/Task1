@@ -1,0 +1,33 @@
+<br><br><br><br><br><br>
+<div class="container">
+
+  <br><br><br>
+<div class="col-xs-4"></div>
+<div class="col-xs-6 col-md-6" 
+       style="background-color: white;
+         box-shadow: inset 1px -1px 1px #994, inset -1px 1px 5px #994;">
+
+<%= form_for :user ,url: users_registrations_update_path ,html: { method: :put } do |f| %>
+
+<div class="field">
+    <%= f.label :password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :new_password, autocomplete: "off" %>
+  </div>
+
+<br><br>
+
+<div class="actions" >
+   &nbsp;&nbsp;&nbsp; <%= f.submit "Update" , class:"btn btn-primary"%>
+      </div>
+</div>
+
+  <div class="col-xs-2"></div>
+
+<%end%>

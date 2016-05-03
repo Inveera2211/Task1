@@ -1,0 +1,47 @@
+
+
+
+
+
+<div class="container">
+<br><br><br><br><br><br>
+  <div class="col-xs-6"></div>
+  <div class="col-xs-4"  style="background-color: white;
+    box-shadow: inset 1px -1px 1px #994, inset -1px 1px 5px #994;">
+    <div class="form-group">
+
+
+    
+      <h1>New Article</h1>
+       
+      <%= form_for :article, url: articles_path do |f| %>
+      
+
+       
+      <img alt="images" src="/assets/article.jpeg" />
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :text%><br>
+        <%= f.text_area :text %>
+      </p>
+
+
+      <p>
+        <%= f.submit %><%= link_to 'Back', articles_path,  class:"btn btn-primary"%>
+      </p>
+       </div>
+      <% end %>
+
+  </div>
+
+<div class="col-xs-2"></div>
+
+
+</div>
+
+</div>
+

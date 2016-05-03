@@ -1,0 +1,35 @@
+
+<div align="left">
+    <div class="container-fluid">
+      
+        <div class="row" >
+      <div class="col-md-6" 
+       style="background-color: white;
+         ">
+         <div>
+          
+<h1>Editing article</h1>
+ 
+
+ 
+<%= form_for @article, method: :put do |f| %>
+  
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit class:"btn btn-success"%>
+  </p>
+
+<% end %>
+ <div>
+<%= link_to 'Back', articles_path %>
+</div>
+

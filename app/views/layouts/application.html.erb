@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task1</title>
+  
+ <%= javascript_include_tag "application"%>
+ <%= csrf_meta_tag%>
+ <%= stylesheet_link_tag 'application' %>
+</head>
+<body>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
+  
+</ul> 
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary'%>  
+   <%= link_to 'CreateArticle', new_article_path, :class => 'btn btn-primary' %> <%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => 'btn btn-primary'%> 
+       <class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %>
+  <% end %>
+<%= yield %></body>
+</html>
+

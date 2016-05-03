@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: this is article
+  text: every man should write article
+  user_id: 5 
+two:
+  title: good article
+  text: man should write good article
+  user_id: 5 
